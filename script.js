@@ -124,7 +124,7 @@ function normaliseLabel(name) {
   // Map combined to canonical display strings
   if (includesAll(n, "blue", "green"))  return "Blue & Green";
   if (includesAll(n, "grey", "green"))  return "Grey & Green";
-  if (includesAll(n, "green", "brown") || n.includes("orange (green & brown"))) return "Green & Brown";
+  if (includesAll(n, "green", "brown") || n.includes("orange (green & brown)")) return "Green & Brown";
 
   // Singles
   if (n === "blue")   return "Blue";
