@@ -65,6 +65,7 @@ function getBinBadge(name) {
   if (n.includes("grey"))   return solidBadge("grey",   name);
   if (n.includes("green"))  return solidBadge("green",  name);
   if (n.includes("purple")) return solidBadge("purple", name);
+  if (n.includes("brown"))  return solidBadge("brown",  name);   // ✅ NEW
 
   // Default (fallback)
   return `<span class="badge">${escapeHtml(name)}</span>`;
