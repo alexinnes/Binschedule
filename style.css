@@ -11,7 +11,7 @@
   --green:  #27ae60;
   --grey:   #7f8c8d;
   --purple: #8e44ad;
-  --brown:  #8a5a2b; /* for Green & Brown split */
+  --brown:  #8a5a2b; /* new: single Brown + Green & Brown split */
 }
 
 * { box-sizing: border-box; }
@@ -116,11 +116,12 @@ header h1 {
   border: 1px solid rgba(0,0,0,0.06);
 }
 
-/* Solid colours */
+/* Solid colours (also usable elsewhere) */
 .blue  { background: var(--blue); }
 .green { background: var(--green); }
 .grey  { background: var(--grey); }
 .purple{ background: var(--purple); }
+.brown { background: var(--brown); } /* NEW: single brown */
 
 /* Split legend tiles */
 .legend .bin.split.grey-green {
@@ -153,6 +154,7 @@ header h1 {
 .badge.green  { background: var(--green); }
 .badge.grey   { background: var(--grey); }
 .badge.purple { background: var(--purple); }
+.badge.brown  { background: var(--brown); } /* NEW: single brown badge */
 
 /* Split colour badges */
 .badge.split.grey-green {
@@ -189,6 +191,7 @@ footer {
   .card p   { font-size: 1.05rem; }
 }
 
+/* High contrast helper */
 @media (prefers-contrast: more) {
   .card, .legend {
     box-shadow: 0 0 0 2px rgba(0,0,0,0.12);
