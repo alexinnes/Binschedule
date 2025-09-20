@@ -1,12 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bin Reminder</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Bin Reminder</h1>
-  <p id="message"></p>
+  <header>
+    <img src="https://img.icons8.com/ios-filled/100/ffffff/trash.png" alt="Bin Icon" class="logo">
+    <h1>Bin Collection Reminder</h1>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Next Collection</h2>
+      <p id="message">Loading...</p>
+    </section>
+
+    <section class="legend">
+      <h3>Bin Colours</h3>
+      <ul>
+        <li><span class="bin blue"></span> Blue Bin</li>
+        <li><span class="bin green"></span> Green Bin</li>
+        <li><span class="bin grey"></span> Grey Bin</li>
+        <li><span class="bin orange"></span> Green & Brown Bins</li>
+        <li><span class="bin purple"></span> Purple Bin</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Bin Reminder | Powered by Azure</p>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
