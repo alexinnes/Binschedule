@@ -3,8 +3,8 @@ async function loadSchedule() {
   const schedule = await response.json();
 
   const today = new Date();
-  const nextSunday = getNextSunday(today);
-  const dateKey = formatDateUK(nextSunday);
+  const targetSunday = getRelevantSunday(today);
+  const dateKey = formatDateUK(targetSunday);
 
   const bins = schedule[dateKey];
 
@@ -17,11 +17,17 @@ async function loadSchedule() {
   }
 }
 
-// ✅ Get the next Sunday after today
-function getNextSunday(d) {
+// ✅ Use today if it’s Sunday, otherwise get next Sunday
+function getRelevantSunday(d) {
   const result = new Date(d);
-  result.setDate(result.getDate() + (7 - result.getDay()));
-  return result;
+  if (result.getDay() === 0) {
+    // today is Sunday → use today
+    return result;
+  } else {
+    // otherwise → move forward to next Sunday
+    result.setDate(result.getDate() + (7 - result.getDay()));
+    return result;
+  }
 }
 
 // ✅ Format date as DD/MM/YYYY
