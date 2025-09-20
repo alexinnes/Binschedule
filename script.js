@@ -5,86 +5,41 @@ async function loadSchedule() {
     const schedule = await response.json();
 
     const today = new Date();
-    const targetSunday = getRelevantSunday(today); // today if Sunday, else next Sunday
-    const dateKey = formatDateUK(targetSunday);
+    const thursdayDate = getNextWeekday(today, 4); // 4 = Thursday
+    const sundayDate   = getNextWeekday(today, 0); // 0 = Sunday
 
-    const bins = schedule[dateKey];
+    const thursdayKey = formatDateUK(thursdayDate);
+    const sundayKey   = formatDateUK(sundayDate);
 
-    const el = document.getElementById("message");
-    if (!bins) {
-      el.textContent = `No bin collection scheduled for ${dateKey}`;
-      return;
+    const thursdayBins = schedule[thursdayKey];
+    const sundayBins   = schedule[sundayKey];
+
+    // Thursday card
+    const thursdayCard = document.getElementById("thursdayCard");
+    const thursdayMsg  = document.getElementById("thursdayMessage");
+    if (thursdayBins) {
+      thursdayCard.style.display = "block";
+      thursdayMsg.innerHTML = renderLine(thursdayKey, thursdayBins);
+    } else {
+      thursdayCard.style.display = "none";
     }
 
-    const badges = bins.map(getBinBadge).join(" ");
-    el.innerHTML = `On <strong>${dateKey}</strong>, put out: ${badges}`;
+    // Sunday card
+    const sundayMsg = document.getElementById("sundayMessage");
+    if (sundayBins) {
+      sundayMsg.innerHTML = renderLine(sundayKey, sundayBins);
+    } else {
+      sundayMsg.textContent = `No bin collection scheduled for ${sundayKey}`;
+    }
   } catch (err) {
     console.error(err);
-    document.getElementById("message").textContent =
-      "Could not load bin schedule. Please try again later.";
   }
 }
 
-// Use today if it’s Sunday; otherwise, next Sunday
-function getRelevantSunday(d) {
-  const result = new Date(d);
-  if (result.getDay() === 0) return result; // Sunday
-  result.setDate(result.getDate() + (7 - result.getDay()));
-  return result;
+function getNextWeekday(baseDate, targetDay) {
+  const d = new Date(baseDate);
+  const currentDay = d.getDay();
+  const diff = (targetDay - currentDay + 7) % 7;
+  d.setDate(d.getDate() + diff);
+  return d;
 }
-
-// UK date (DD/MM/YYYY)
-function formatDateUK(date) {
-  const day = String(date.getDate()).padStart(2, "0");
-  const month = String(date.getMonth() + 1).padStart(2, "0");
-  const year = date.getFullYear();
-  return `${day}/${month}/${year}`;
-}
-
-/* ---- Badge helpers ---- */
-function getBinBadge(name) {
-  const n = name.toLowerCase().trim();
-
-  // Combined: Blue & Green
-  if (includesAll(n, "blue", "green")) {
-    return splitBadge("blue", "green", "Blue & Green");
-  }
-
-  // Combined: Grey & Green
-  if (includesAll(n, "grey", "green")) {
-    return splitBadge("grey", "green", "Grey & Green");
-  }
-
-  // Combined: Green & Brown
-  if (includesAll(n, "green", "brown") || n.includes("orange (green & brown")) {
-    return splitBadge("green", "brown", "Green & Brown");
-  }
-
-  // Singles
-  if (n.includes("blue"))   return solidBadge("blue",   name);
-  if (n.includes("grey"))   return solidBadge("grey",   name);
-  if (n.includes("green"))  return solidBadge("green",  name);
-  if (n.includes("purple")) return solidBadge("purple", name);
-  if (n.includes("brown"))  return solidBadge("brown",  name);   // ✅ NEW
-
-  // Default (fallback)
-  return `<span class="badge">${escapeHtml(name)}</span>`;
-}
-
-function solidBadge(color, label) {
-  return `<span class="badge ${color}">${escapeHtml(label)}</span>`;
-}
-
-function splitBadge(left, right, label) {
-  return `<span class="badge split ${left}-${right}">${escapeHtml(label)}</span>`;
-}
-
-function includesAll(text, ...parts) {
-  return parts.every(p => text.includes(p));
-}
-
-function escapeHtml(s) {
-  return s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-}
-
-loadSchedule();
