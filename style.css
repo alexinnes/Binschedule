@@ -330,3 +330,79 @@ footer {
     box-shadow: 0 0 0 2px rgba(0,0,0,0.12);
   }
 }
+.legend .bin-legend-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+.legend .bin-legend-table th,
+.legend .bin-legend-table td {
+  padding: 10px 18px;
+  text-align: left;
+  border: none;
+}
+.legend .bin-legend-table th {
+  background: #f4f6f9;
+  color: var(--brand);
+  font-weight: 600;
+}
+.legend .bin-legend-table td:first-child {
+  width: 36px;
+  text-align: center;
+}
+
+/* ---------------------------
+    Table
+    -------------------------/-- */
+    /* Style for the bin legend table */
+.bin-legend-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.bin-legend-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.bin-legend-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.bin-legend-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.bin {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+}
+
+.bin.blue {
+  background-color: blue;
+}
+
+.bin.green {
+  background-color: green;
+}
+
+.bin.grey {
+  background-color: grey;
+}
+
+.bin.brown {
+  background-color: brown;
+}
+
+.bin.purple {
+  background-color: purple;
+}
+/* Add padding to the first column of the bin legend table */
+.bin-legend-table td:first-child {
+  padding-left: 16px; /* Adjust the value as needed */
+  padding-right:16px;
+}
