@@ -1,0 +1,130 @@
+[
+  {
+    "date": "21/09/2025",
+    "bins": ["Grey", "Green"]
+  },
+  {
+    "date": "28/09/2025",
+    "bins": ["Brown"]
+  },
+  {
+    "date": "02/10/2025",
+    "bins": ["Purple"]
+  },
+  {
+    "date": "05/10/2025",
+    "bins": ["Blue"]
+  },
+  {
+    "date": "12/10/2025",
+    "bins": ["Green & Brown"]
+  },
+  {
+    "date": "19/10/2025",
+    "bins": ["Grey"]
+  },
+  {
+    "date": "26/10/2025",
+    "bins": ["Brown"]
+  },
+  {
+    "date": "02/11/2025",
+    "bins": ["Blue & Green"]
+  },
+  {
+    "date": "09/11/2025",
+    "bins": ["Brown"]
+  },
+  {
+    "date": "16/11/2025",
+    "bins": ["Grey"]
+  },
+  {
+    "date": "23/11/2025",
+    "bins": ["Green & Brown"]
+  },
+  {
+    "date": "27/11/2025",
+    "bins": ["Purple"]
+  },
+  {
+    "date": "30/11/2025",
+    "bins": ["Blue"]
+  },
+  {
+    "date": "07/12/2025",
+    "bins": ["Brown"]
+  },
+  {
+    "date": "14/12/2025",
+    "bins": ["Grey & Green"]
+  },
+  {
+    "date": "21/12/2025",
+    "bins": ["Brown"]
+  },
+  {
+    "date": "28/12/2025",
+    "bins": ["Blue"]
+  },
+  {
+    "date": "04/01/2026",
+    "bins": ["Green & Brown"]
+  },
+  {
+    "date": "11/01/2026",
+    "bins": ["Grey"]
+  },
+  {
+    "date": "18/01/2026",
+    "bins": ["Brown"]
+  },
+  {
+    "date": "22/01/2026",
+    "bins": ["Purple"]
+  },
+  {
+    "date": "25/01/2026",
+    "bins": ["Blue & Green"]
+  },
+  {
+    "date": "01/02/2026",
+    "bins": ["Brown"]
+  },
+  {
+    "date": "08/02/2026",
+    "bins": ["Grey"]
+  },
+  {
+    "date": "15/02/2026",
+    "bins": ["Green & Brown"]
+  },
+  {
+    "date": "22/02/2026",
+    "bins": ["Blue"]
+  },
+  {
+    "date": "01/03/2026",
+    "bins": ["Brown"]
+  },
+  {
+    "date": "08/03/2026",
+    "bins": ["Grey & Green"]
+  },
+  {
+    "date": "15/03/2026",
+    "bins": ["Brown"]
+  },
+  {
+    "date": "19/03/2026",
+    "bins": ["Purple"]
+  },
+  {
+    "date": "22/03/2026",
+    "bins": ["Blue"]
+  },
+  {
+    "date": "29/03/2026",
+    "bins": ["Green & Brown"]
+  }
+]
