@@ -1,7 +1,8 @@
 /* ----------------------------
-   Basic Navigation
+   Mobile Friendly Navigation
 ----------------------------- */
 .main-nav {
+  position: relative;
   margin-top: 12px;
   text-align: center;
 }
@@ -26,7 +27,72 @@
   background: #fff;
   color: var(--brand);
 }
-/* Keep menu horizontal on all screen sizes */
+
+/* Hamburger menu for mobile */
+.nav-toggle {
+  display: none;
+}
+.nav-toggle-label {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 44px;
+  width: 44px;
+  cursor: pointer;
+  z-index: 2;
+}
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background: #fff;
+  height: 4px;
+  width: 28px;
+  border-radius: 2px;
+  position: absolute;
+  left: 8px;
+  transition: all 0.3s;
+}
+.nav-toggle-label span {
+  top: 20px;
+}
+.nav-toggle-label span::before {
+  content: '';
+  top: -10px;
+}
+.nav-toggle-label span::after {
+  content: '';
+  top: 10px;
+}
+
+@media (max-width: 600px) {
+  .main-nav ul {
+    flex-direction: column;
+    background: var(--brand);
+    position: absolute;
+    top: 44px;
+    right: 0;
+    left: 0;
+    display: none;
+    gap: 0;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 4px 12px rgba(44,62,80,0.08);
+  }
+  .main-nav ul li {
+    margin: 0;
+    border-bottom: 1px solid #2c3e5033;
+  }
+  .main-nav ul li:last-child {
+    border-bottom: none;
+  }
+  .nav-toggle:checked + .nav-toggle-label + ul {
+    display: flex;
+  }
+  .nav-toggle-label {
+    display: block;
+  }
+}
 #calendarContainer h2 {
   text-align: center;
   font-size: 1.4rem;
@@ -330,3 +396,15 @@ footer {
     box-shadow: 0 0 0 2px rgba(0,0,0,0.12);
   }
 }
+
+/* ...existing code... */
+footer a {
+  color: inherit;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+footer a:hover,
+footer a:focus {
+  color: #2ecc40; /* or any accent color you prefer */
+}
+/* ...existing code... */
