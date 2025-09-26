@@ -396,11 +396,10 @@ footer {
     box-shadow: 0 0 0 2px rgba(0,0,0,0.12);
   }
 }
-<<<<<<< HEAD
 
 /* ...existing code... */
 footer a {
-  color: inherit;
+  color: #ffffff;
   text-decoration: underline;
   transition: color 0.2s;
 }
@@ -409,7 +408,6 @@ footer a:focus {
   color: #2ecc40; /* or any accent color you prefer */
 }
 /* ...existing code... */
-=======
 .legend .bin-legend-table {
   width: 100%;
   border-collapse: collapse;
@@ -494,4 +492,3 @@ footer a:focus {
   font-size: 0.9rem; /* Slightly smaller text */
   color: #666; /* Optional: Add a softer color for better readability */
 }
->>>>>>> 531fc843baeecb2974e0479eaf9a9204b2ba4684
