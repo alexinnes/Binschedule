@@ -6,7 +6,7 @@
     name="viewport"
     content="width=device-width, initial-scale=1, viewport-fit=cover"
   />
-  <title>Bin Collection Reminder</title>
+  <title>Carmunnock Bin Collection Reminder</title>
   <link rel="icon" type="image/png" href="https://img.icons8.com/ios-filled/32/2c3e50/trash.png" />
   <link rel="stylesheet" href="style.css" />
   <meta name="description" content="See which bins to put out on collection days." />
@@ -19,7 +19,7 @@
       alt="Bin Icon"
       class="logo"
     />
-    <h1>Bin Collection Reminder</h1>
+    <h1>Carmunnock Bin Collection Reminder</h1>
     <nav class="main-nav">
       <input type="checkbox" id="nav-toggle" class="nav-toggle" />
       <label for="nav-toggle" class="nav-toggle-label">
@@ -37,27 +37,55 @@
     <section class="card">
       <h2>Sunday Collection</h2>
       <p id="sundayMessage">Loading…</p>
+      <p class="note">ℹ️: Sunday collections are in the morning approx. 0700.</p>
     </section>
 
     <!-- Thursday collection card -->
     <section class="card" id="thursdayCard" style="display:none;">
       <h2>Thursday Collection</h2>
       <p id="thursdayMessage">Loading…</p>
+      <p class="note">ℹ️: Thursday collections are every other month.</p>
     </section>
 
     <!-- Legend -->
     <section class="legend">
-      <h3>Bin Colours</h3>
-      <ul>
-        <li><span class="bin blue"></span> Blue Bin</li>
-        <li><span class="bin green"></span> Green Bin</li>
-        <li><span class="bin grey"></span> Grey Bin</li>
-        <li><span class="bin brown"></span> Brown Bin</li>
-        <li><span class="bin purple"></span> Purple Bin</li>
-        <li><span class="bin split green-brown"></span> Green &amp; Brown</li>
-        <li><span class="bin split grey-green"></span> Grey &amp; Green</li>
-        <li><span class="bin split blue-green"></span> Blue &amp; Green</li>
-      </ul>
+      <h3>Bins</h3>
+      <table class="bin-legend-table">
+        <thead>
+          <tr>
+            <th>Bin Color</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="bin blue"></span></td>
+            <td>Blue Bin</td>
+            <td>Paper/Cardboard</td>
+          </tr>
+          <tr>
+            <td><span class="bin green"></span></td>
+            <td>Green Bin</td>
+            <td>General Waste</td>
+          </tr>
+          <tr>
+            <td><span class="bin grey"></span></td>
+            <td>Grey Bin</td>
+            <td>Cans and Plastics</td>
+          </tr>
+          <tr>
+            <td><span class="bin brown"></span></td>
+            <td>Brown Bin</td>
+            <td>Food and Garden Waste <small>(⚠️ Garden waste requires a <a href="https://www.glasgow.gov.uk/gardenwaste">permit</a>)</small></td>
+          </tr>
+          <tr>
+            <td><span class="bin purple"></span></td>
+            <td>Purple Bin</td>
+            <td>Glass</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
   </main>
 

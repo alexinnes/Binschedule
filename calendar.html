@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Bin Collection Calendar</title>
+  <title>Carmunnock Bin Collection Calendar</title>
   <link rel="stylesheet" href="style.css" />
   <meta name="description" content="Calendar view of bin collection dates and colours." />
 </head>
 <body>
   <header>
     <img src="https://img.icons8.com/ios-filled/100/ffffff/trash.png" alt="Bin Icon" class="logo" />
-    <h1>Bin Collection Calendar</h1>
+    <h1>Carmunnock Bin Collection Calendar</h1>
     <nav class="main-nav">
       <input type="checkbox" id="nav-toggle" class="nav-toggle" />
       <label for="nav-toggle" class="nav-toggle-label">
@@ -32,32 +32,4 @@
     <p>&copy; 2025 Bin Reminder • Created by Alex I</p>
   </footer>
   <script src="script.js"></script>
-  <script>
-    function showCalendarError(container, message) {
-          if (!message) return;
-          container.innerHTML = `<div class='calendar-error' style='color:#fff;background:#e74c3c;padding:18px 12px;border-radius:10px;margin:18px auto;max-width:420px;text-align:center;font-weight:600;'>${message}</div>`;
-        }
-    // Visual calendar rendering for bin collections
-    document.addEventListener('DOMContentLoaded', async function() {
-      const calendarDiv = document.getElementById('visualCalendar');
-      if (!calendarDiv) return;
-      let schedule;
-      try {
-        const resp = await fetch('bins.json', { cache: 'no-store' });
-        if (!resp.ok) throw new Error('bins.json fetch failed');
-        schedule = await resp.json();
-      } catch (e) {
-        calendarDiv.textContent = 'Could not load bin schedule.';
-        return;
-      }
-
-      // Parse all dates and group by month
-      const entries = Object.entries(schedule)
-        .map(([uk, bins]) => ({ uk, date: parseUKDate(uk), bins }))
-        .sort((a, b) => a.date - b.date);
-      const months = Array.from(new Set(entries.map(e => `${e.date.getFullYear()}-${String(e.date.getMonth()+1).padStart(2,"0")}`)));
-
-      // Month selector
-      <script src="script.js"></script>
-      <script src="calendar-scripts.js"></script>
-      monthSelect.innerHTML = months.map(m => {
+  <script src="calendar-scripts.js"></script>
