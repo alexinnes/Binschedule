@@ -56,11 +56,13 @@ async function loadSchedule() {
   const sundayBins = normaliseBins(schedule[sundayKey]);
   if (sundayBins && sundayBins.length) {
     if (sundayMsg) sundayMsg.innerHTML = renderLine(sundayKey, sundayBins);
+    document.title = `Sunday Bin: ${sundayBins.join(" & ")} - Carmunnock Bin Collection Reminder`;
   } else {
     // Fallback: find next Sunday in the JSON within 14 days
     const fallbackSun = findNextEventFrom(schedule, sundayDate, d => d.getDay() === 0, 14);
     if (fallbackSun) {
       if (sundayMsg) sundayMsg.innerHTML = renderLine(fallbackSun.uk, normaliseBins(fallbackSun.bins));
+      document.title = `Sunday Bin: ${normaliseBins(fallbackSun.bins).join(" & ")} - Carmunnock Bin Collection Reminder`;
     } else if (sundayMsg) {
       sundayMsg.textContent = `No bin collection scheduled for ${sundayKey}`;
     }
