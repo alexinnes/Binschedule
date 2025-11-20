@@ -117,19 +117,6 @@ This project provides a user-friendly interface for residents of Carmunnock to v
 
 ---
 
-## Future Improvements
-
-1. **Add Notifications**:
-   - Implement browser notifications to remind users of upcoming bin collections.
-
-2. **User Preferences**:
-   - Allow users to customize their bin collection reminders.
-
-3. **API Integration**:
-   - Fetch real-time bin collection schedules from a public API.
-
----
-
 ## Credits
 
 - **Icons**: [Icons8](https://icons8.com)
