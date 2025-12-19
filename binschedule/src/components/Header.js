@@ -10,10 +10,14 @@ function Header() {
       />
       <h1>Carmunnock Bin Collection Reminder</h1>
       <nav className="main-nav">
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/calendar">Calendar</a></li>
-        </ul>
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/calendar">Calendar</Link>
+        </li>
+      </ul>
       </nav>
     </header>
   );
